@@ -1,0 +1,45 @@
+package com.example.uielement;
+
+import android.os.Bundle;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout lt=new LinearLayout(this);
+        lt.setOrientation(LinearLayout.VERTICAL);
+        TextView tv =new TextView(this);
+        String s="this is text view";
+        tv.setText(s);
+        tv.setLayoutParams(params);
+
+        Button bt1=new Button(this);
+        String s1="this is button1";
+        bt1.setText(s1);
+        bt1.setLayoutParams(params);
+
+        Button bt2=new Button(this);
+        String s2="this is button2";
+        bt2.setText(s1);
+        bt2.setLayoutParams(params);
+
+        lt.addView(tv);
+        lt.addView(bt1);
+        lt.addView(bt2);
+        ViewGroup.LayoutParams lp=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+        LinearLayout.LayoutParams.WRAP_CONTENT);
+        this.addContentView(lt,lp);
+
+
+    }
+}
